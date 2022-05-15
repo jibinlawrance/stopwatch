@@ -4,10 +4,12 @@ const stop = document.getElementById('stop');
 const reset = document.getElementById('reset');
 const sec = document.querySelector('.sec');
 const min = document.querySelector('.min');
+const hour = document.querySelector('.hour');
 
 // variables
-var secCount = 0;
-var minCount = 0;
+var secCount = 58;
+var minCount = 58;
+var hourCount = 0;
 var twoDigit;
 var interval;
 
@@ -44,6 +46,27 @@ start.addEventListener('click', function(){
                 min.innerText = minCount;
             }
         }
+
+        // if minutes counter is greater than 59
+        if(minCount > 59){
+            // reset the secounds counter to zero
+            secCount = 0;
+            sec.innerText = `00`;
+
+            // reset the minutes counter to zero
+            minCount = 0;
+            min.innerText = `00`;
+
+            // increment the hours counter
+            hourCount++;
+            // check if the hours counter is single digit
+            if(hourCount < 10){
+                twoDigit = `0${hourCount}`
+                hour.innerText = twoDigit;
+            } else {
+                hour.innerText = hourCount;
+            }
+        }
     },1000)
 });
 
@@ -68,6 +91,10 @@ reset.addEventListener('click', function(){
     // reset the minutes counter to zero
     minCount = 0;
     min.innerText = `00`;
+
+    // reset the hours counter to zero
+    hourCount = 0;
+    hour.innerText = `00`;
 
     //stop the function from running
     clearInterval(interval);
