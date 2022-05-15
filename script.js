@@ -7,8 +7,8 @@ const min = document.querySelector('.min');
 const hour = document.querySelector('.hour');
 
 // variables
-var secCount = 58;
-var minCount = 58;
+var secCount = 0;
+var minCount = 0;
 var hourCount = 0;
 var twoDigit;
 var interval;
