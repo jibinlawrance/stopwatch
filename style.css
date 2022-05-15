@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono&family=Poppins&display=swap');
+
+/* remove the preset styles by the broswer and add a beautiful font for all the text*/
+* { margin: 0px; padding: 0px; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+html { font-size: 16px; }
+
+/* styling the main wrapper*/
+main { width: 100%; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 6rem; }
+
+/* styling the clock label(minute and second) */
+.clock { font-size: 1.5rem; }
+
+/* styling the digits */
+.clock span { font-size: 6rem; font-family: 'Azeret Mono', monospace; }
+
+/* styling the buttons */
+button { opacity: 1; font-size: 2rem; line-height: 2rem; background-color: #fff; color: #333; border: 2px solid #333; box-shadow: 5px 5px 0px #333; padding: 10px 20px; cursor: pointer; }
+
+/* this will create a clicking animation */
+button:active { box-shadow: none; transform: translate(5px,5px); }
+
+/* style for inactive button */
+button:disabled { pointer-events: none; opacity: 0.5; box-shadow: none; transform: translate(5px,5px); }
+
+/* responsive */
+@media only screen and (max-width: 1024px){
+    html { font-size: 15px; }
+}
+
+@media only screen and (max-width: 768px){
+    html { font-size: 14px; }
+}
+
+@media only screen and (max-width: 568px){
+    html { font-size: 12px; }
+}
+
+@media only screen and (max-width: 414px){
+    html { font-size: 10px; }
+}
+
+@media only screen and (max-width: 360px){
+    html { font-size: 8px; }
+}
